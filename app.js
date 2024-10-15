@@ -12,6 +12,9 @@ const PORT = process.env.PORT || 5000
 //const products_routes = require('./routes/products')
 const admin_routes = require('./routes/admins')
 const productRoutes = require('./apis/producsApi');
+const stateRoutes = require('./apis/statesApi');
+const userRoutes = require('./apis/usersApi');
+const order_routes = require('./apis/orderApi');
 
 
 // Middleware to parse JSON requests
@@ -26,6 +29,9 @@ app.get('/',(req,res)=>{
 //app.use("/api/products",products_routes)
 app.use("/api/admins",admin_routes)
 app.use("/api/products",productRoutes)
+app.use("/api/states",stateRoutes)
+app.use("/api/users",userRoutes)
+app.use("/api/orders",order_routes)
 
 const  start  = async () => {
    try{
